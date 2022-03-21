@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Alternative Check-In</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="maps_seelist">Ver Lista</string>
+    <string name="maps_tocheckin">Fazer Check-In</string>
+</resources>
