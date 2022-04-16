@@ -7,9 +7,13 @@
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1245" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/drawable/selector_button_simple.xml" value="0.1245" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/drawable/shape_button_dark.xml" value="0.1245" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/drawable/shape_button_disabled.xml" value="0.1" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/drawable/shape_button_light.xml" value="0.1245" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/drawable/shape_button_normal.xml" value="0.1" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/drawable/shape_button_true.xml" value="0.1245" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/activity_maps.xml" value="0.18796296296296297" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/activity_position_list.xml" value="0.2" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/item_position.xml" value="0.2" />
       </map>
     </option>
   </component>

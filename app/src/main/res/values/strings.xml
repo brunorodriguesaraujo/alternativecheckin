@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">Alternative Check-In</string>
-    <string name="title_activity_maps">MapsActivity</string>
-    <string name="maps_seelist">Ver Lista</string>
+
+    <!-- MapsActivity -->
+    <string name="maps_list">Ver Lista</string>
     <string name="maps_tocheckin">Fazer Check-In</string>
+
+    <!-- PositionActivity -->
+    <string name="position_title">Posições</string>
+    <string name="position_checkout">Fazer Checkout</string>
+    <string name="postion_content_description">botão de voltar</string>
+
 </resources>

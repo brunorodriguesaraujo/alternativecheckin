@@ -2,6 +2,7 @@ package br.com.alternativecheck_in.ui.maps
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationListener
@@ -13,6 +14,7 @@ import br.com.alternativecheck_in.R
 import br.com.alternativecheck_in.databinding.ActivityMapsBinding
 import br.com.alternativecheck_in.ui.extension.gone
 import br.com.alternativecheck_in.ui.extension.visible
+import br.com.alternativecheck_in.ui.position.PositionListActivity
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -42,6 +44,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         createMapFragment()
+        binding.buttonList.setOnClickListener {
+            val intent = Intent(this, PositionListActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun createMapFragment() {
@@ -61,7 +68,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         circleOption = CircleOptions()
             .center(rodJp)
             .radius(100.0)
-            .strokeColor(R.color.purple_200)
+            .strokeColor(R.color.colorPrimary)
         mMap.addCircle(circleOption)
     }
 
