@@ -2,12 +2,16 @@
     <string name="app_name">Alternative Check-In</string>
 
     <!-- MapsActivity -->
-    <string name="maps_list">Ver Lista</string>
+    <string name="maps_list">Ver Posições</string>
     <string name="maps_tocheckin">Fazer Check-In</string>
+
+    <!-- LoginActivity -->
+    <string name="login_title">Login</string>
 
     <!-- Dialog -->
     <string name="dialog_text_location">Você precisa estar na localização correta para fazer o check-in</string>
     <string name="dialog_text_permission">É necessário conceder acesso a localização</string>
+    <string name="dialog_text_button">Continue</string>
 
     <!-- PositionActivity -->
     <string name="position_title">Posições</string>
@@ -24,5 +28,6 @@
 
     <!-- RecoveryActivity -->
     <string name="recovery_send">Enviar</string>
+    <string name="recovery_title">Recuperação de senha</string>
 
 </resources>

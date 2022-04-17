@@ -8,13 +8,12 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textview_dialog"
+        style="@style/TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="32dp"
-        android:fontFamily="sans-serif"
         android:gravity="center"
-        android:textColor="@color/textcolorBlack"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +27,7 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginVertical="32dp"
         android:background="@drawable/shape_button_dialog"
-        android:text="continue"
+        android:text="@string/dialog_text_button"
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

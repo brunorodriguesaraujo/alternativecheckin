@@ -22,13 +22,24 @@
     </style>
 
     <style name="TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxStrokeColor">@color/textcolorBlack</item>
+        <item name="boxStrokeColor">@color/textColorBlack</item>
         <item name="hintTextColor">@color/colorNeutral01</item>
     </style>
 
     <style name="TextInputEditText">
-        <item name="android:textColor">@color/textcolorBlack</item>
+        <item name="android:textColor">@color/textColorBlack</item>
         <item name="android:textCursorDrawable">@drawable/shape_cursor</item>
+    </style>
+
+    <style name="ImageBack">
+        <item name="android:src">@drawable/ic_arrow_back_24</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="tint">@color/colorPrimary</item>
+    </style>
+
+    <style name="TextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/textColorBlack</item>
     </style>
 
 </resources>

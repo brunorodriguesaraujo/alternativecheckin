@@ -7,13 +7,12 @@
     android:background="@color/colorBackgroundSecondary"
     tools:context=".ui.login.LoginActivity">
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textview_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:textColor="@color/textcolorBlack"
-        android:textSize="18sp"
+        android:text="@string/login_title"
+        style="@style/TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -48,7 +47,7 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="32dp"
         android:hint="@string/login_password"
-        app:boxStrokeColor="@color/textcolorBlack"
+        app:boxStrokeColor="@color/textColorBlack"
         app:endIconMode="password_toggle"
         app:endIconTint="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,12 +79,12 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textview_recovery"
+        style="@style/TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/login_forgot"
         android:textColor="@color/colorPrimary"
-        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/button_login"
         app:layout_constraintStart_toStartOf="@+id/button_login"
         app:layout_constraintTop_toBottomOf="@+id/button_login" />

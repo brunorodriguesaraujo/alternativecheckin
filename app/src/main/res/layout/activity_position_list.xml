@@ -16,23 +16,20 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            style="@style/ImageBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:background="@drawable/ic_arrow_back_24"
-            android:backgroundTint="@color/colorPrimary"
             android:contentDescription="@string/content_description_back"
-            android:padding="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
+            style="@style/TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/position_title"
-            android:textColor="@color/textcolorBlack"
-            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

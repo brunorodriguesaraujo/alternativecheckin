@@ -8,27 +8,23 @@
 
     <ImageView
         android:id="@+id/image_back"
+        style="@style/ImageBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:src="@drawable/ic_arrow_back_24"
+        android:contentDescription="@string/content_description_back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/colorPrimary"
-        android:contentDescription="@string/content_description_back" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textview_title"
+        style="@style/TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Recuperação de senha"
-        android:textColor="@color/textcolorBlack"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:text="@string/recovery_title"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="16dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textinput_email"
@@ -40,7 +36,7 @@
         android:hint="@string/login_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_back" >
+        app:layout_constraintTop_toBottomOf="@+id/image_back">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edittext_email"
