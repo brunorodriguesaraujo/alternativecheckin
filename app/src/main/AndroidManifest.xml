@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlternativeCheckIn">
         <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.splash.ScreenActivity"
             android:exported="true"
             android:theme="@style/MaterialComponents.FullScreen">
@@ -31,7 +34,6 @@
         <activity
             android:name=".ui.maps.MapsActivity"
             android:exported="false" />
-
         <activity
             android:name=".ui.position.PositionListActivity"
             android:exported="false" />
