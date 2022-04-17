@@ -5,6 +5,10 @@
     <string name="maps_list">Ver Lista</string>
     <string name="maps_tocheckin">Fazer Check-In</string>
 
+    <!-- Dialog -->
+    <string name="dialog_text_location">Você precisa estar na localização correta para fazer o check-in</string>
+    <string name="dialog_text_permission">É necessário conceder acesso a localização</string>
+
     <!-- PositionActivity -->
     <string name="position_title">Posições</string>
     <string name="position_checkout">Fazer Checkout</string>

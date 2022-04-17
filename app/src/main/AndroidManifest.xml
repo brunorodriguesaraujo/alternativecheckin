@@ -14,8 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlternativeCheckIn">
         <activity
-            android:name=".ui.position.PositionListActivity"
-            android:exported="false" />
+            android:name=".ui.splash.ScreenActivity"
+            android:exported="true"
+            android:theme="@style/MaterialComponents.FullScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -23,13 +30,11 @@
 
         <activity
             android:name=".ui.maps.MapsActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity
+            android:name=".ui.position.PositionListActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

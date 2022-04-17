@@ -1,19 +1,16 @@
 package br.com.alternativecheck_in.ui.maps
 
-import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import br.com.alternativecheck_in.R
 import br.com.alternativecheck_in.databinding.ActivityMapsBinding
-import br.com.alternativecheck_in.ui.extension.gone
-import br.com.alternativecheck_in.ui.extension.visible
+import br.com.alternativecheck_in.databinding.DialogCustomBinding
 import br.com.alternativecheck_in.ui.position.PositionListActivity
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -26,9 +23,7 @@ import com.google.android.gms.maps.model.LatLng
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
-    companion object {
-        private const val LOCATION_REQUEST_CODE = 1
-    }
+
     private val fuseLocationClient: FusedLocationProviderClient by lazy {
         LocationServices.getFusedLocationProviderClient(this)
     }
@@ -38,17 +33,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private var locationManager: LocationManager? = null
     private lateinit var mLastLocation: LatLng
     private lateinit var circleOption: CircleOptions
+    private lateinit var dialog: AlertDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         createMapFragment()
-        binding.buttonList.setOnClickListener {
+        binding.buttonMapsList.setOnClickListener {
             val intent = Intent(this, PositionListActivity::class.java)
             startActivity(intent)
         }
-
     }
 
     private fun createMapFragment() {
@@ -72,54 +67,18 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.addCircle(circleOption)
     }
 
-    private fun isPermissionGranted(): Boolean {
-        return ActivityCompat.checkSelfPermission(
-            this,
-            Manifest.permission.ACCESS_FINE_LOCATION
-        ) == PackageManager.PERMISSION_GRANTED
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        when (requestCode) {
-            LOCATION_REQUEST_CODE -> {
-                if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-                    successPermission()
-                } else {
-                    failedPermission()
-                }
-                return
-            }
-        }
-    }
-
     @SuppressLint("MissingPermission")
     private fun successPermission() {
-        binding.buttonMapsCheckin.visible()
         mMap.isMyLocationEnabled = true
         moveCamera()
     }
 
-    private fun failedPermission() {
-        binding.buttonMapsCheckin.gone()
-    }
-
     @SuppressLint("MissingPermission")
     private fun enableMyLocation() {
-        if (isPermissionGranted()) {
-            mMap.isMyLocationEnabled = true
-            moveCamera()
-            locationUpdates()
-        } else {
-            requestPermissions(
-                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-                LOCATION_REQUEST_CODE
-            )
-        }
+        mMap.isMyLocationEnabled = true
+        moveCamera()
+        locationUpdates()
+
     }
 
     @SuppressLint("MissingPermission")
@@ -146,7 +105,26 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun setButtonCheckin(distance: FloatArray) {
-        binding.buttonMapsCheckin.isEnabled = distance[0] <= circleOption.radius
+        binding.buttonMapsCheckin.setOnClickListener {
+            if (distance[0] >= circleOption.radius) {
+                showDialog()
+            } else {
+                val intent = Intent(this, PositionListActivity::class.java)
+                startActivity(intent)
+            }
+        }
+    }
+
+    private fun showDialog() {
+        val build = AlertDialog.Builder(this, R.style.DialogCustomer)
+        val bindingDialogCustom = DialogCustomBinding.inflate(layoutInflater)
+        build.setView(bindingDialogCustom.root)
+        bindingDialogCustom.apply {
+            textviewDialog.text = getString(R.string.dialog_text_location)
+            buttonDialog.setOnClickListener { dialog.dismiss() }
+        }
+        dialog = build.create()
+        dialog.show()
     }
 
     @SuppressLint("MissingPermission")
