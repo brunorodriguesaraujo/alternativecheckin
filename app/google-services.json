@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "743815239874",
+    "project_id": "alternative-check-in-6a643",
+    "storage_bucket": "alternative-check-in-6a643.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743815239874:android:34f7352cc4e309ae05c35b",
+        "android_client_info": {
+          "package_name": "br.com.alternativecheck_in"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "743815239874-rlh8ar22ebca5n3le4tcaluhmdd81nmk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhhdb5dzFZHUZy5vVFMmVtLeSTomJfyIg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "743815239874-rlh8ar22ebca5n3le4tcaluhmdd81nmk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

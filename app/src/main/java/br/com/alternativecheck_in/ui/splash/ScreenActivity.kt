@@ -1,15 +1,13 @@
 package br.com.alternativecheck_in.ui.splash
 
 import android.Manifest
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import br.com.alternativecheck_in.R
 import br.com.alternativecheck_in.databinding.DialogCustomBinding
-import br.com.alternativecheck_in.ui.login.LoginActivity
-import br.com.alternativecheck_in.ui.maps.MapsActivity
+import br.com.alternativecheck_in.extension.startLogin
 
 class ScreenActivity : AppCompatActivity() {
 
@@ -37,9 +35,7 @@ class ScreenActivity : AppCompatActivity() {
         when (requestCode) {
             LOCATION_REQUEST_CODE -> {
                 if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-                    val intent = Intent(this, LoginActivity::class.java)
-                    startActivity(intent)
-                    finish()
+                    startLogin()
                 } else {
                     showDialog()
                 }

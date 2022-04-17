@@ -1,4 +1,4 @@
-package br.com.alternativecheck_in.ui.extension
+package br.com.alternativecheck_in.extension
 
 import android.view.View
 

@@ -13,7 +13,7 @@
     <string name="position_title">Posições</string>
     <string name="position_checkout">Fazer Checkout</string>
     <string name="postion_content_description">botão de voltar</string>
-    
+
     <!-- LoginActivity -->
     <string name="login_forgot">Esqueci meu acesso</string>
     <string name="login_enter">Entrar</string>

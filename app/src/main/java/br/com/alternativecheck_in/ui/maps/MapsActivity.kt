@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import br.com.alternativecheck_in.R
 import br.com.alternativecheck_in.databinding.ActivityMapsBinding
 import br.com.alternativecheck_in.databinding.DialogCustomBinding
+import br.com.alternativecheck_in.extension.startPositionList
 import br.com.alternativecheck_in.ui.position.PositionListActivity
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -41,8 +42,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         setContentView(binding.root)
         createMapFragment()
         binding.buttonMapsList.setOnClickListener {
-            val intent = Intent(this, PositionListActivity::class.java)
-            startActivity(intent)
+            startPositionList()
         }
     }
 

@@ -15,8 +15,11 @@
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/drawable/shape_button_normal.xml" value="0.1" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/drawable/shape_button_true.xml" value="0.1245" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/drawable/shape_cursor.xml" value="0.1245" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/activity_admin.xml" value="0.2" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/activity_maps.xml" value="0.18796296296296297" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/activity_permission.xml" value="0.2" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/activity_position_list.xml" value="0.2" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/activity_screen.xml" value="0.2" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/activity_splash.xml" value="0.2" />
