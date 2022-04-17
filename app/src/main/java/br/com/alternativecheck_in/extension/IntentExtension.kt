@@ -6,7 +6,7 @@ import br.com.alternativecheck_in.ui.admin.AdminActivity
 import br.com.alternativecheck_in.ui.login.LoginActivity
 import br.com.alternativecheck_in.ui.maps.MapsActivity
 import br.com.alternativecheck_in.ui.position.PositionListActivity
-import br.com.alternativecheck_in.ui.splash.ScreenActivity
+import br.com.alternativecheck_in.ui.recovery.RecoveryActivity
 
 fun Activity.startMaps() {
     val intent = Intent(this, MapsActivity::class.java)
@@ -29,4 +29,9 @@ fun Activity.startAdmin() {
     val intent = Intent(this, AdminActivity::class.java)
     startActivity(intent)
     finish()
+}
+
+fun Activity.startRecovery() {
+    val intent = Intent(this, RecoveryActivity::class.java)
+    startActivity(intent)
 }

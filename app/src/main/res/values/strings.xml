@@ -12,12 +12,17 @@
     <!-- PositionActivity -->
     <string name="position_title">Posições</string>
     <string name="position_checkout">Fazer Checkout</string>
-    <string name="postion_content_description">botão de voltar</string>
+
+    <!-- All -->
+    <string name="content_description_back">botão de voltar</string>
 
     <!-- LoginActivity -->
     <string name="login_forgot">Esqueci meu acesso</string>
     <string name="login_enter">Entrar</string>
     <string name="login_password">Senha</string>
     <string name="login_email">E-mail</string>
+
+    <!-- RecoveryActivity -->
+    <string name="recovery_send">Enviar</string>
 
 </resources>

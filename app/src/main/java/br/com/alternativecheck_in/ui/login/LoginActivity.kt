@@ -7,13 +7,16 @@ import androidx.core.widget.addTextChangedListener
 import br.com.alternativecheck_in.databinding.ActivityLoginBinding
 import br.com.alternativecheck_in.extension.startAdmin
 import br.com.alternativecheck_in.extension.startMaps
+import br.com.alternativecheck_in.extension.startRecovery
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
 
-    private val UID_ADMIN = "WH4WtXIiQNQzE05bmkOv8mf8VKr1"
+    companion object {
+        private const val UID_ADMIN = "WH4WtXIiQNQzE05bmkOv8mf8VKr1"
+    }
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
@@ -26,26 +29,18 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         auth = Firebase.auth
-        setEmailAndPassword()
         listener()
     }
 
     private fun listener() {
-        binding.buttonLogin.setOnClickListener {
-            validateData()
+        binding.apply {
+            edittextEmail.addTextChangedListener { email = it.toString() }
+            edittextPassword.addTextChangedListener { password = it.toString() }
+            buttonLogin.setOnClickListener { validateData() }
+            textviewRecovery.setOnClickListener { startRecovery() }
         }
     }
 
-    private fun setEmailAndPassword() {
-        binding.apply {
-            edittextEmail.addTextChangedListener {
-                email = it.toString()
-            }
-            edittextPassword.addTextChangedListener {
-                password = it.toString()
-            }
-        }
-    }
 
     private fun validateData() {
         if (email.isEmpty() || password.isEmpty()) {
