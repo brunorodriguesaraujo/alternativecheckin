@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/drawable/ic_add_24.xml" value="0.1245" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.1245" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1245" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/drawable/ic_logout_48.xml" value="0.1245" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/drawable/selector_button_rounded.xml" value="0.1245" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/drawable/selector_button_simple.xml" value="0.1245" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/drawable/shape_background_dialog.xml" value="0.1245" />
@@ -16,7 +18,8 @@
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/drawable/shape_button_normal.xml" value="0.1" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/drawable/shape_button_true.xml" value="0.1245" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/drawable/shape_cursor.xml" value="0.1245" />
-        <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/activity_admin.xml" value="0.2" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/activity_add_driver.xml" value="0.15555555555555556" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/activity_admin.xml" value="0.22" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/activity_maps.xml" value="0.18796296296296297" />
@@ -26,6 +29,7 @@
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/activity_screen.xml" value="0.2" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/activity_splash.xml" value="0.2" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/dialog_custom.xml" value="0.2" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/item_driver.xml" value="0.22" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/item_position.xml" value="0.2" />
       </map>
     </option>
