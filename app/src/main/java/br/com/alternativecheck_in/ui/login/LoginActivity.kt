@@ -8,6 +8,7 @@ import br.com.alternativecheck_in.databinding.ActivityLoginBinding
 import br.com.alternativecheck_in.extension.startAdmin
 import br.com.alternativecheck_in.extension.startMaps
 import br.com.alternativecheck_in.extension.startRecovery
+import br.com.alternativecheck_in.helper.FirebaseHelper
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -15,7 +16,7 @@ import com.google.firebase.ktx.Firebase
 class LoginActivity : AppCompatActivity() {
 
     companion object {
-        private const val UID_ADMIN = "WH4WtXIiQNQzE05bmkOv8mf8VKr1"
+        const val UID_ADMIN = "WH4WtXIiQNQzE05bmkOv8mf8VKr1"
     }
 
     private lateinit var binding: ActivityLoginBinding
@@ -55,7 +56,9 @@ class LoginActivity : AppCompatActivity() {
                         directionUserType()
                     } else {
                         Toast.makeText(
-                            baseContext, "Authentication failed.",
+                            baseContext, FirebaseHelper.validError(
+                                task.exception?.message ?: ""
+                            ),
                             Toast.LENGTH_SHORT
                         ).show()
                     }
