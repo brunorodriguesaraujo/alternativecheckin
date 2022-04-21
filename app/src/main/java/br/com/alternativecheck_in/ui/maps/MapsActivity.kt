@@ -41,8 +41,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         createMapFragment()
-        binding.buttonMapsList.setOnClickListener {
-            startPositionList()
+        setListener()
+    }
+
+    private fun setListener() {
+        binding.apply {
+            buttonMapsList.setOnClickListener { startPositionList() }
+            buttonMapsCheckin.setOnClickListener { moveCamera() }
         }
     }
 
@@ -68,17 +73,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     @SuppressLint("MissingPermission")
-    private fun successPermission() {
-        mMap.isMyLocationEnabled = true
-        moveCamera()
-    }
-
-    @SuppressLint("MissingPermission")
     private fun enableMyLocation() {
         mMap.isMyLocationEnabled = true
-        moveCamera()
         locationUpdates()
-
     }
 
     @SuppressLint("MissingPermission")
@@ -105,13 +102,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun setButtonCheckin(distance: FloatArray) {
-        binding.buttonMapsCheckin.setOnClickListener {
-            if (distance[0] >= circleOption.radius) {
-                showDialog()
-            } else {
-                val intent = Intent(this, PositionListActivity::class.java)
-                startActivity(intent)
-            }
+        if (distance[0] >= circleOption.radius) {
+            showDialog()
+        } else {
+            val intent = Intent(this, PositionListActivity::class.java)
+            startActivity(intent)
         }
     }
 
