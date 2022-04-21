@@ -2,6 +2,7 @@ package br.com.alternativecheck_in.extension
 
 import android.app.Activity
 import android.content.Intent
+import br.com.alternativecheck_in.ui.admin.RegisterDriverActivity
 import br.com.alternativecheck_in.ui.admin.AdminActivity
 import br.com.alternativecheck_in.ui.login.LoginActivity
 import br.com.alternativecheck_in.ui.maps.MapsActivity
@@ -33,5 +34,10 @@ fun Activity.startAdmin() {
 
 fun Activity.startRecovery() {
     val intent = Intent(this, RecoveryActivity::class.java)
+    startActivity(intent)
+}
+
+fun Activity.startRegisterDriver() {
+    val intent = Intent(this, RegisterDriverActivity::class.java)
     startActivity(intent)
 }

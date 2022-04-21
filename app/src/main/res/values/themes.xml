@@ -37,6 +37,13 @@
         <item name="tint">@color/colorPrimary</item>
     </style>
 
+    <style name="ImageLogout">
+        <item name="android:src">@drawable/ic_logout_48</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="tint">@color/colorPrimary</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
     <style name="TextView">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/textColorBlack</item>

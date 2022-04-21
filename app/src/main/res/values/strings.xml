@@ -25,9 +25,27 @@
     <string name="login_enter">Entrar</string>
     <string name="login_password">Senha</string>
     <string name="login_email">E-mail</string>
+    <string name="login_driver">Nome do motorista</string>
+    <string name="login_cod">Código do motorista</string>
 
     <!-- RecoveryActivity -->
     <string name="recovery_send">Enviar</string>
     <string name="recovery_title">Recuperação de senha</string>
+
+    <!-- AdminActivity -->
+    <string name="admin_title">Motoristas</string>
+
+    <!-- AddDriverActivity -->
+    <string name="add_title">Adicionar Motorista</string>
+
+    <!--    Erros Firebase Authentication-->
+    <string name="account_not_registered_register_fragment">Nenhuma conta encontrada com este e-mail.</string>
+    <string name="invalid_email_register_fragment">Insira um e-mail válido.</string>
+    <string name="invalid_password_register_fragment">Senha inválida, tente novamente.</string>
+    <string name="email_in_use_register_fragment">Este e-mail já está em uso.</string>
+    <string name="strong_password_register_fragment">Insira uma senha mais forte.</string>
+    <string name="error_generic">Ocorreu um erro, por favor tente novamente mais tarde.</string>
+
+
 
 </resources>
