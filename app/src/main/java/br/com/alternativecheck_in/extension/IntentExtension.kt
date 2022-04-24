@@ -2,8 +2,12 @@ package br.com.alternativecheck_in.extension
 
 import android.app.Activity
 import android.content.Intent
-import br.com.alternativecheck_in.ui.admin.RegisterDriverActivity
+import android.os.Bundle
+import br.com.alternativecheck_in.R
+import br.com.alternativecheck_in.model.Driver
 import br.com.alternativecheck_in.ui.admin.AdminActivity
+import br.com.alternativecheck_in.ui.admin.EditDriverActivity
+import br.com.alternativecheck_in.ui.admin.RegisterDriverActivity
 import br.com.alternativecheck_in.ui.login.LoginActivity
 import br.com.alternativecheck_in.ui.maps.MapsActivity
 import br.com.alternativecheck_in.ui.position.PositionListActivity
@@ -39,5 +43,13 @@ fun Activity.startRecovery() {
 
 fun Activity.startRegisterDriver() {
     val intent = Intent(this, RegisterDriverActivity::class.java)
+    startActivity(intent)
+}
+
+fun Activity.startEditDriver(driver: Driver) {
+    val intent = Intent(this, EditDriverActivity::class.java)
+    val bundle = Bundle()
+    bundle.putSerializable(getString(R.string.all_driver), driver)
+    intent.putExtras(bundle)
     startActivity(intent)
 }

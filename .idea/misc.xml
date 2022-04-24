@@ -31,10 +31,15 @@
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/dialog_custom.xml" value="0.2" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/item_driver.xml" value="0.22" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/AlternativeCheckIn/app/src/main/res/layout/item_position.xml" value="0.2" />
+        <entry key="..\:/Users/bruno/StudioProjects/alternativecheckin/app/src/main/res/drawable/selector_button_rounded.xml" value="0.1025" />
+        <entry key="..\:/Users/bruno/StudioProjects/alternativecheckin/app/src/main/res/drawable/shape_button_disabled.xml" value="0.1025" />
+        <entry key="..\:/Users/bruno/StudioProjects/alternativecheckin/app/src/main/res/drawable/shape_button_normal.xml" value="0.1025" />
         <entry key="..\:/Users/bruno/StudioProjects/alternativecheckin/app/src/main/res/layout/activity_admin.xml" value="0.14722222222222223" />
+        <entry key="..\:/Users/bruno/StudioProjects/alternativecheckin/app/src/main/res/layout/activity_edit_driver.xml" value="0.2" />
         <entry key="..\:/Users/bruno/StudioProjects/alternativecheckin/app/src/main/res/layout/activity_login.xml" value="0.18" />
         <entry key="..\:/Users/bruno/StudioProjects/alternativecheckin/app/src/main/res/layout/activity_maps.xml" value="0.17481884057971014" />
-        <entry key="..\:/Users/bruno/StudioProjects/alternativecheckin/app/src/main/res/layout/activity_register_driver.xml" value="0.17481884057971014" />
+        <entry key="..\:/Users/bruno/StudioProjects/alternativecheckin/app/src/main/res/layout/activity_register_driver.xml" value="0.25" />
+        <entry key="..\:/Users/bruno/StudioProjects/alternativecheckin/app/src/main/res/layout/item_driver.xml" value="0.25" />
       </map>
     </option>
   </component>

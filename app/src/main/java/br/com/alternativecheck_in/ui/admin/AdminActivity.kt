@@ -4,10 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.com.alternativecheck_in.databinding.ActivityAdminBinding
-import br.com.alternativecheck_in.extension.gone
-import br.com.alternativecheck_in.extension.startLogin
-import br.com.alternativecheck_in.extension.startRegisterDriver
-import br.com.alternativecheck_in.extension.visible
+import br.com.alternativecheck_in.extension.*
 import br.com.alternativecheck_in.helper.FirebaseHelper
 import br.com.alternativecheck_in.helper.PreferencesHelper
 import br.com.alternativecheck_in.model.Driver
@@ -20,10 +17,9 @@ import com.google.firebase.database.ValueEventListener
 class AdminActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAdminBinding
-    private val listener: SendDriver? = null
     private val driverList = mutableListOf<Driver>()
     private val adapterAdmin: AdminAdapter by lazy {
-        AdminAdapter(driverList, listener)
+        AdminAdapter(driverList, initEditDriver())
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +32,12 @@ class AdminActivity : AppCompatActivity() {
 
     private fun initAdapter() {
         binding.recyclerDrivers.adapter = adapterAdmin
+    }
+
+    private fun initEditDriver() = object : SendDriver {
+        override fun sendDriver(driver: Driver) {
+            startEditDriver(driver)
+        }
     }
 
     private fun getDriver() {

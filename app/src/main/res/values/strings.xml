@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Alternative Check-In</string>
     <string name="preference_file_key">GeneralPreferences</string>
+    <string name="all_driver">driver</string>
 
     <!-- MapsActivity -->
     <string name="maps_list">Ver Posições</string>
@@ -37,8 +38,11 @@
     <string name="admin_title">Motoristas</string>
     <string name="admin_empty">Não há nenhum motorista cadastrado!</string>
 
-    <!-- AddDriverActivity -->
-    <string name="add_title">Adicionar Motorista</string>
+    <!-- RegisterDriverActivity -->
+    <string name="register_title">Adicionar Motorista</string>
+
+    <!-- EditDriverActivity -->
+    <string name="edit_title">Editar Motorista</string>
 
     <!--    Erros Firebase Authentication-->
     <string name="account_not_registered_register_fragment">Nenhuma conta encontrada com este e-mail.</string>
