@@ -11,7 +11,7 @@ class FirebaseHelper {
 
         fun getDatabase() = FirebaseDatabase.getInstance().reference
 
-        private fun getAuth() = FirebaseAuth.getInstance()
+        fun getAuth() = FirebaseAuth.getInstance()
 
         fun getIdAdmin() = LoginActivity.UID_ADMIN
 
