@@ -5,13 +5,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import br.com.alternativecheck_in.databinding.ActivityLoginBinding
-import br.com.alternativecheck_in.extension.startAdmin
-import br.com.alternativecheck_in.extension.startMaps
-import br.com.alternativecheck_in.extension.startRecovery
+import br.com.alternativecheck_in.extension.*
 import br.com.alternativecheck_in.helper.FirebaseHelper
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
+import br.com.alternativecheck_in.helper.PreferencesHelper
 
 class LoginActivity : AppCompatActivity() {
 
@@ -20,8 +16,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private lateinit var binding: ActivityLoginBinding
-    private lateinit var auth: FirebaseAuth
-
     private var email = ""
     private var password = ""
 
@@ -29,8 +23,9 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        auth = Firebase.auth
         listener()
+        verifyIfAdminIsAuth()
+        hideProgress()
     }
 
     private fun listener() {
@@ -44,13 +39,16 @@ class LoginActivity : AppCompatActivity() {
 
 
     private fun validateData() {
+        showProgress()
         if (email.isEmpty() || password.isEmpty()) {
             Toast.makeText(
                 baseContext, "Preencha os campos",
                 Toast.LENGTH_SHORT
             ).show()
         } else {
-            auth.signInWithEmailAndPassword(email, password)
+            FirebaseHelper
+                .getAuth()
+                .signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         directionUserType()
@@ -61,15 +59,43 @@ class LoginActivity : AppCompatActivity() {
                             ),
                             Toast.LENGTH_SHORT
                         ).show()
+                        hideProgress()
                     }
                 }
         }
     }
 
+    private fun hideProgress() {
+        binding.apply {
+            buttonLogin.visible()
+            progressBar.gone()
+            textviewRecovery.visible()
+        }
+    }
+
+    private fun showProgress() {
+        binding.apply {
+            progressBar.visible()
+            textviewRecovery.gone()
+            buttonLogin.gone()
+        }
+    }
+
     private fun directionUserType() {
-        if (auth.uid == UID_ADMIN)
+        if (FirebaseHelper.getIdUser() == UID_ADMIN) {
+            PreferencesHelper.getInstance(this).setPreferencesBoolean("LoginAdmin", true)
             startAdmin()
-        else {
+        } else {
+            startMaps()
+        }
+    }
+
+    private fun verifyIfAdminIsAuth() {
+        val isLoginAdmin: Boolean =
+            PreferencesHelper.getInstance(this).getPreferencesBoolean("LoginAdmin", false)
+        if (FirebaseHelper.isAutenticated() && isLoginAdmin) {
+            startAdmin()
+        } else if (FirebaseHelper.isAutenticated()) {
             startMaps()
         }
     }

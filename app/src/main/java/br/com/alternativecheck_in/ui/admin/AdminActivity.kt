@@ -4,8 +4,12 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.com.alternativecheck_in.databinding.ActivityAdminBinding
+import br.com.alternativecheck_in.extension.gone
+import br.com.alternativecheck_in.extension.startLogin
 import br.com.alternativecheck_in.extension.startRegisterDriver
+import br.com.alternativecheck_in.extension.visible
 import br.com.alternativecheck_in.helper.FirebaseHelper
+import br.com.alternativecheck_in.helper.PreferencesHelper
 import br.com.alternativecheck_in.model.Driver
 import br.com.alternativecheck_in.ui.admin.adapter.AdminAdapter
 import br.com.alternativecheck_in.ui.admin.adapter.SendDriver
@@ -35,6 +39,7 @@ class AdminActivity : AppCompatActivity() {
     }
 
     private fun getDriver() {
+        binding.progressBar.visible()
         FirebaseHelper
             .getDatabase()
             .child("driver")
@@ -48,10 +53,10 @@ class AdminActivity : AppCompatActivity() {
                             val driver = snap.getValue(Driver::class.java) as Driver
                             driverList.add(driver)
                         }
-
                         initAdapter()
+                        binding.progressBar.gone()
                     }
-                    tasksEmpty()
+                    driversEmpty()
                 }
 
                 override fun onCancelled(error: DatabaseError) {
@@ -60,18 +65,27 @@ class AdminActivity : AppCompatActivity() {
 
             })
     }
-    private fun tasksEmpty() {
-//        binding.textInfo.text = if(taskList.isEmpty()){
-//            getText(R.string.text_task_list_empty_done_fragment)
-//        }else {
-//            ""
-//        }
-    }
 
+    private fun driversEmpty() {
+        binding.textviewEmpty.apply {
+            if (driverList.isEmpty()) {
+                visible()
+            } else {
+                gone()
+            }
+        }
+    }
 
     private fun setListener() {
         binding.apply {
             fabAddDriver.setOnClickListener { startRegisterDriver() }
+            imageLogout.setOnClickListener { logout() }
         }
+    }
+
+    private fun logout() {
+        FirebaseHelper.getAuth().signOut()
+        PreferencesHelper.getInstance(this).setPreferencesBoolean("LoginAdmin", false)
+        startLogin()
     }
 }
