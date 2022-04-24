@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Alternative Check-In</string>
+    <string name="preference_file_key">GeneralPreferences</string>
 
     <!-- MapsActivity -->
     <string name="maps_list">Ver Posições</string>
@@ -34,6 +35,7 @@
 
     <!-- AdminActivity -->
     <string name="admin_title">Motoristas</string>
+    <string name="admin_empty">Não há nenhum motorista cadastrado!</string>
 
     <!-- AddDriverActivity -->
     <string name="add_title">Adicionar Motorista</string>
@@ -45,7 +47,6 @@
     <string name="email_in_use_register_fragment">Este e-mail já está em uso.</string>
     <string name="strong_password_register_fragment">Insira uma senha mais forte.</string>
     <string name="error_generic">Ocorreu um erro, por favor tente novamente mais tarde.</string>
-
 
 
 </resources>
