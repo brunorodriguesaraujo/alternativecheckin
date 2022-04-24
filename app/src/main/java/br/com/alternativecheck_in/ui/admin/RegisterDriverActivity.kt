@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
+import br.com.alternativecheck_in.R
 import br.com.alternativecheck_in.databinding.ActivityRegisterDriverBinding
 import br.com.alternativecheck_in.helper.FirebaseHelper
 import br.com.alternativecheck_in.model.Driver
@@ -66,7 +67,7 @@ class RegisterDriverActivity : AppCompatActivity() {
     private fun saveDriver() {
         FirebaseHelper
             .getDatabase()
-            .child("driver")
+            .child(getString(R.string.all_driver))
             .child(FirebaseHelper.getIdAdmin())
             .child(driver.id)
             .setValue(driver)
