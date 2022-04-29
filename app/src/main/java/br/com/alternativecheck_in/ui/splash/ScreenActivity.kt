@@ -7,6 +7,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import br.com.alternativecheck_in.R
 import br.com.alternativecheck_in.databinding.DialogCustomBinding
+import br.com.alternativecheck_in.extension.gone
 import br.com.alternativecheck_in.extension.startLogin
 
 class ScreenActivity : AppCompatActivity() {
@@ -49,8 +50,9 @@ class ScreenActivity : AppCompatActivity() {
         val bindingDialogCustom = DialogCustomBinding.inflate(layoutInflater)
         build.setView(bindingDialogCustom.root)
         bindingDialogCustom.apply {
+            buttonDialogCancel.gone()
             textviewDialog.text = getString(R.string.dialog_text_permission)
-            buttonDialog.setOnClickListener {
+            buttonDialogContinue.setOnClickListener {
                 requestPermissions(
                     arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
                     LOCATION_REQUEST_CODE

@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import br.com.alternativecheck_in.R
 import br.com.alternativecheck_in.databinding.ActivityMapsBinding
 import br.com.alternativecheck_in.databinding.DialogCustomBinding
+import br.com.alternativecheck_in.extension.gone
 import br.com.alternativecheck_in.extension.startPositionList
 import br.com.alternativecheck_in.ui.position.PositionListActivity
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -115,8 +116,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val bindingDialogCustom = DialogCustomBinding.inflate(layoutInflater)
         build.setView(bindingDialogCustom.root)
         bindingDialogCustom.apply {
+            buttonDialogCancel.gone()
             textviewDialog.text = getString(R.string.dialog_text_location)
-            buttonDialog.setOnClickListener { dialog.dismiss() }
+            buttonDialogContinue.setOnClickListener { dialog.dismiss() }
         }
         dialog = build.create()
         dialog.show()

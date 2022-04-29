@@ -1,7 +1,6 @@
 package br.com.alternativecheck_in.ui.login
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import br.com.alternativecheck_in.databinding.ActivityLoginBinding
@@ -12,7 +11,7 @@ import br.com.alternativecheck_in.helper.PreferencesHelper
 class LoginActivity : AppCompatActivity() {
 
     companion object {
-        const val UID_ADMIN = "WH4WtXIiQNQzE05bmkOv8mf8VKr1"
+        const val UID_ADMIN = "1baoZsBzpkOkzd0yp4fWHgtB7xt1"
     }
 
     private lateinit var binding: ActivityLoginBinding
@@ -41,10 +40,7 @@ class LoginActivity : AppCompatActivity() {
     private fun validateData() {
         showProgress()
         if (email.isEmpty() || password.isEmpty()) {
-            Toast.makeText(
-                baseContext, "Preencha os campos",
-                Toast.LENGTH_SHORT
-            ).show()
+            createToast(this, "Preencha os campos")
         } else {
             FirebaseHelper
                 .getAuth()
@@ -53,12 +49,11 @@ class LoginActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         directionUserType()
                     } else {
-                        Toast.makeText(
-                            baseContext, FirebaseHelper.validError(
+                        createToast(
+                            this, FirebaseHelper.validError(
                                 task.exception?.message ?: ""
-                            ),
-                            Toast.LENGTH_SHORT
-                        ).show()
+                            )
+                        )
                         hideProgress()
                     }
                 }
@@ -68,14 +63,14 @@ class LoginActivity : AppCompatActivity() {
     private fun hideProgress() {
         binding.apply {
             buttonLogin.visible()
-            progressBar.gone()
+            progressLottie.animationView.gone()
             textviewRecovery.visible()
         }
     }
 
     private fun showProgress() {
         binding.apply {
-            progressBar.visible()
+            progressLottie.animationView.visible()
             textviewRecovery.gone()
             buttonLogin.gone()
         }
