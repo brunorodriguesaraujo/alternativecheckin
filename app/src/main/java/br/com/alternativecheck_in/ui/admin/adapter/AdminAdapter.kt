@@ -16,7 +16,7 @@ class AdminAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(driver: Driver) {
             binding.apply {
-                textviewIdDriver.text = driver.driverCod.toString()
+                textviewIdDriver.text = driver.driverCod
                 textviewNameDriver.text = driver.driverName
                 layout.setOnClickListener { listener?.sendDriver(driver) }
             }

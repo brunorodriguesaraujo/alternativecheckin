@@ -1,11 +1,12 @@
 package br.com.alternativecheck_in.ui.admin
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import br.com.alternativecheck_in.R
 import br.com.alternativecheck_in.databinding.ActivityAdminBinding
 import br.com.alternativecheck_in.extension.*
 import br.com.alternativecheck_in.helper.FirebaseHelper
+import br.com.alternativecheck_in.helper.ObservableHelper
 import br.com.alternativecheck_in.helper.PreferencesHelper
 import br.com.alternativecheck_in.model.Driver
 import br.com.alternativecheck_in.ui.admin.adapter.AdminAdapter
@@ -27,6 +28,10 @@ class AdminActivity : AppCompatActivity() {
         binding = ActivityAdminBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setListener()
+    }
+
+    override fun onResume() {
+        super.onResume()
         getDriver()
     }
 
@@ -41,30 +46,31 @@ class AdminActivity : AppCompatActivity() {
     }
 
     private fun getDriver() {
-        binding.progressBar.visible()
+        binding.progressLottie.animationView.visible()
         FirebaseHelper
             .getDatabase()
-            .child("driver")
-            .child(FirebaseHelper.getIdAdmin())
+            .child(getString(R.string.all_driver))
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()) {
-
                         driverList.clear()
                         for (snap in snapshot.children) {
                             val driver = snap.getValue(Driver::class.java) as Driver
                             driverList.add(driver)
                         }
                         initAdapter()
-                        binding.progressBar.gone()
                     }
+                    ObservableHelper.userDelete.observe(this@AdminActivity) {
+                        driverList.remove(it)
+                    }
+                    adapterAdmin.notifyDataSetChanged()
+                    binding.progressLottie.animationView.gone()
                     driversEmpty()
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                    Toast.makeText(this@AdminActivity, "Erro", Toast.LENGTH_SHORT).show()
+                    createToast(this@AdminActivity, "Erro")
                 }
-
             })
     }
 
