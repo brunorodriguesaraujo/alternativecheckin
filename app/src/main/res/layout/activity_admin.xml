@@ -6,21 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".ui.admin.AdminActivity">
 
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
+    <include
+        android:id="@+id/progress_lottie"
+        layout="@layout/lottie_animation" />
 
     <TextView
         android:id="@+id/textview_empty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/admin_empty"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:layout_marginHorizontal="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

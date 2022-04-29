@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".ui.admin.RegisterDriverActivity">
 
+    <include
+        android:id="@+id/progress_lottie"
+        layout="@layout/lottie_animation" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout"
         android:layout_width="match_parent"
@@ -130,19 +134,6 @@
         android:layout_marginTop="32dp"
         android:background="@drawable/selector_button_rounded"
         android:fontFamily="sans-serif-medium"
-        android:padding="16dp"
-        android:text="@string/register_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textinput_password" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_delete_driver"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/selector_button_rounded"
         android:padding="16dp"
         android:text="@string/register_title"
         app:layout_constraintEnd_toEndOf="parent"
