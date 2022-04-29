@@ -21,16 +21,31 @@
         tools:text="Você precisa estar na localização correta para fazer o check-in" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_dialog"
+        android:id="@+id/button_dialog_continue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginVertical="32dp"
         android:background="@drawable/shape_button_dialog"
-        android:text="@string/dialog_text_button"
+        android:text="@string/dialog_text_button_continue"
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_dialog_cancel"
+        app:layout_constraintTop_toBottomOf="@+id/textview_dialog" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_dialog_cancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="32dp"
+        android:visibility="gone"
+        android:background="@drawable/shape_button_dialog"
+        android:text="@string/dialog_text_button_cancel"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_dialog_continue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_dialog" />
 

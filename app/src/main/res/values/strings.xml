@@ -13,7 +13,9 @@
     <!-- Dialog -->
     <string name="dialog_text_location">Você precisa estar na localização correta para fazer o check-in</string>
     <string name="dialog_text_permission">É necessário conceder acesso a localização</string>
-    <string name="dialog_text_button">Continue</string>
+    <string name="dialog_text_button_continue">Continue</string>
+    <string name="dialog_text_button_cancel">Cancelar</string>
+    <string name="dialog_text_delete">Tem certeza que deseja deletar?</string>
 
     <!-- PositionActivity -->
     <string name="position_title">Posições</string>
@@ -52,5 +54,8 @@
     <string name="strong_password_register_fragment">Insira uma senha mais forte.</string>
     <string name="error_generic">Ocorreu um erro, por favor tente novamente mais tarde.</string>
 
+    <!-- ItemDriver -->
+    <string name="item_driver_code">Cód. do Motorista:</string>
+    <string name="item_driver_name">Nome do Motorista:</string>
 
 </resources>
